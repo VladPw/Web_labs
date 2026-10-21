@@ -1,0 +1,140 @@
+*{
+margin: 0;
+padding: 0;
+}
+html, body {
+height: 100%;
+font-family: Arial, sans-serif;
+}
+.header {
+height: 180px;
+margin: 0px 0px;
+text-align: center;
+background-color: #33691e;
+overflow: hidden;
+position: relative;
+}
+.header img { /* Додано щоб шапка не розтягувалась */
+width: 100%;
+height: 100%;
+object-fit: cover; 
+}
+.header-title {
+position: absolute;
+top: 0;
+left: 0;
+width: 100%;
+line-height: 180px; 
+text-align: center;
+color: #ffffff;
+font-size: 90px;
+font-weight: bold;
+z-index: 2;
+}
+.main {
+min-height: 100%;
+position: relative;
+background-color: #eff2eb;
+margin: 0px 0px;
+}
+.menu {
+background: #558b2f;
+height: 35px;
+padding: 5px 20px;
+margin: 5px 0px;
+text-align: center;
+}
+/*Завдання 3*/
+#nav {
+display: inline-block;
+list-style: none;
+font-weight: bold;
+margin: 0;
+padding: 0;
+}
+#nav li {
+display: inline-block;
+margin-right: 10px;
+position: relative;
+text-align: left;
+}
+#nav li a {
+display: block;
+padding: 8px 15px;
+color: #fff;
+background: #33691e;
+text-decoration: none;
+text-shadow: 1px 1px 1px rgba(0,0,0,0.75);
+border-radius: 2px;
+}
+#nav li a:hover {
+color: #fff;
+background: #1b5e20;
+text-decoration: underline;
+}
+#nav ul {
+list-style: none;
+position: absolute;
+left: -9999px;
+opacity: 0;
+z-index: 10; 
+}
+#nav ul li {
+padding-top: 1px;
+display: block;
+margin: 0;
+}
+#nav ul a {
+white-space: nowrap;
+display: block;
+}
+#nav li:hover ul {
+left: 0px;
+opacity: 1;
+}
+#nav li:hover a {
+background: #1b5e20;
+text-decoration: underline;
+}
+#nav li:hover ul a {
+text-decoration: none;
+}
+#nav li:hover ul li a:hover {
+background: #558b2f;
+text-decoration: underline;
+}
+.content {
+padding: 30px 50px 80px 50px;
+clear: both; 
+}
+.photorow {
+display: flex;
+justify-content: center;
+margin-bottom: 25px;
+}
+.photo {
+margin-right: 10px;
+float: left;
+width: 200px;
+padding-left: 30px;
+text-align: center;
+font-weight: bold;
+color: #1b5e20;
+}
+.photo img { /* Додано щоб картинки не сплющувались */
+width: 200px;
+height: 220px;
+object-fit: cover; 
+border: 2px solid #558b2f; 
+}
+.footer {
+height: 50px;
+position: absolute;
+text-align: center;
+left: 0;
+bottom: 0;
+width: 100%;
+background-color: #1b5e20;
+color: #ffffff;
+font-size: 14px;
+}
