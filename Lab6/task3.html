@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Лабораторна робота №6 (Завдання 3)</title>
+<style>
+table {
+font-family: Arial, sans-serif;
+width: 700px;
+margin: 30px auto;
+text-align: center;
+}
+th {
+background-color: #33691e;
+color: #ffffff;
+padding: 10px;
+}
+td {
+padding: 8px;
+background-color: #eff2eb;
+}
+.total {
+font-weight: bold;
+background-color: #dcedc8;
+}
+</style>
+</head>
+<body>
+<script>
+let item = [
+["101", "Лопата штикова", 450, 2],
+["402", "Граблі металеві/віялові", 319, 3],
+["123", "Секатор", 114, 5],
+["854", "Сапка", 176, 4],
+["235", "Садовий шланг 1/2 20м", 699, 1]
+];
+let totalS = 0;
+document.write("<table border=\"1\" cellspacing=\"0\" cellpadding=\"2\" align=\"center\">");
+document.write("<tr>");
+document.write("<th>Код</th>");
+document.write("<th>Найменування</th>");
+document.write("<th>Ціна за одиницю (грн)</th>");
+document.write("<th>Кількість (шт)</th>");
+document.write("<th>Сума (грн)</th>");
+document.write("</tr>");
+for (let i = 0; i < 5; i++) {
+let code = item[i][0];
+let name = item[i][1];
+let price = item[i][2];
+let count = item[i][3];
+let sum = price * count; 
+totalS = totalS + sum; 
+document.write("<tr>");
+document.write("<td>" + code + "</td>");
+document.write("<td>" + name + "</td>");
+document.write("<td>" + price + "</td>");
+document.write("<td>" + count + "</td>");
+document.write("<td>" + sum + "</td>");
+document.write("</tr>");
+}
+document.write("<tr>");
+document.write("<td colspan=\"4\" class=\"total\" align=\"right\">Всього:</td>");
+document.write("<td class=\"total\">" + totalS + "</td>");
+document.write("</tr>");
+document.write("</table>");
+</script>
+</body>
+</html>

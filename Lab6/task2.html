@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Лабораторна робота №6 (Завдання 2)</title>
+<style>
+p {
+width: 1000px; 
+margin: 10px auto; 
+padding: 15px 0px; 
+text-align: center; 
+font-family: Arial, sans-serif; 
+border: 1px dotted #888888;
+}
+</style>
+</head>
+<body>
+<script>
+let levels = 5; 
+let output = '';
+for (let i = 1; i <= levels; i++) {
+let r = Math.random() * 255;
+let g = Math.random() * 255;
+let b = Math.random() * 255;
+output += '<p style="background-color: rgb(' + r + ', ' + g + ', ' + b + ')">Абзац ' + i + '</p>';
+}
+document.write(output);
+</script>
+</body>
+</html>
