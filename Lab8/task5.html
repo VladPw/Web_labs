@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Лабораторна робота №8 (Завдання 5)</title>
+<script type='text/javascript'> 
+function validateR() {
+document.getElementById('namef').innerHTML = '';
+document.getElementById('emailf').innerHTML = '';
+document.getElementById('phonef').innerHTML = '';
+document.getElementById('passf').innerHTML = '';
+let fullname = document.getElementById("regName").value;
+let email = document.getElementById("regEmail").value;
+let phone = document.getElementById("regPhone").value;
+let password = document.getElementById("regPassword").value;
+let isV = true;
+let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+if (fullname == "") {
+document.getElementById('namef').innerHTML = "* Поле ПІБ обов'язкове";
+isV = false;
+}
+if (email == "") {
+document.getElementById('emailf').innerHTML = "* Поле Email не може бути пустим";
+isV = false;
+} else if (!email.match(emailRegex)) {
+document.getElementById('emailf').innerHTML = "* Введіть коректний Email адрес";
+isV = false;
+} 
+if (phone == "") {
+document.getElementById('phonef').innerHTML = "* Поле Телефон не може бути пустим";
+isV = false;
+} 
+if (password == "") {
+document.getElementById('passf').innerHTML = "* Поле Пароль не може бути пустим";
+isV = false;
+} else if (password.length < 6) {
+document.getElementById('passf').innerHTML = "* Мінімум 6 символів";
+isV = false;
+}
+if (isV) {
+alert("Дані введено коректно. Акаунт успішно створено.");
+}
+return false;
+}
+function validateL() {
+document.getElementById('logemailf').innerHTML = '';
+document.getElementById('logpassf').innerHTML = '';
+let email = document.getElementById("loginEmail").value;
+let password = document.getElementById("loginPassword").value;
+let isV = true;
+let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+if (email == "") {
+document.getElementById('logemailf').innerHTML = "* Поле Email не може бути пустим";
+isV = false;
+} else if (!email.match(emailRegex)) {
+document.getElementById('logemailf').innerHTML = "* Введіть коректний Email адрес";
+isV = false;
+}
+if (password == "") {
+document.getElementById('logpassf').innerHTML = "* Поле Пароль не може бути пустим";
+isV = false;
+}  
+if (isV) {
+alert("Авторизація пройшла успішно.");
+}
+return false;
+}
+</script>
+</head>
+<body bgcolor="#eff2eb" text="black">
+<font face="Arial">
+<h2 align="center"><font color="#33691e">Особистий кабінет клієнта "Садовий центр"</font></h2>
+<br>
+<table align="center" border="2" bordercolor="#558b2f" width="400" bgcolor="#ffffff" cellpadding="15" cellspacing="0">
+<tr>
+<td>
+<h3 align="center"><font color="#1b5e20">Реєстрація нового клієнта</font></h3>
+<hr color="#558b2f" size="1">   
+<form name="regForm" action="#" onsubmit="return validateR()">
+<p><b>ПІБ:</b><br> 
+<input type="text" id="regName" size="35" placeholder="Іванов Іван">
+<br><font color="red" size="2"><span id="namef"></span></font></p>      
+<p><b>Електронна пошта:</b><br> 
+<input type="text" id="regEmail" size="35" placeholder="mail@gmail.com">
+<br><font color="red" size="2"><span id="emailf"></span></font></p>    
+<p><b>Телефон:</b><br>
+<input type="text" id="regPhone" size="35" placeholder="+380501234567">
+<br><font color="red" size="2"><span id="phonef"></span></font></p>
+<p><b>Пароль:</b><br> 
+<input type="password" id="regPassword" size="35">
+<br><font color="red" size="2"><span id="passf"></span></font></p>   
+<p align="center">
+<input type="submit" value="Створити акаунт" style="background-color:#33691e; color:white; padding:8px 20px; font-weight:bold;">
+</p>
+</form>
+</td>
+</tr>
+</table>
+<br><br>
+<table align="center" border="2" bordercolor="#558b2f" width="400" bgcolor="#ffffff" cellpadding="15" cellspacing="0">
+<tr>
+<td>
+<h3 align="center"><font color="#1b5e20">Вхід в систему</font></h3>
+<hr color="#558b2f" size="1">
+<form name="loginForm" action="#" onsubmit="return validateL()">
+<p><b>Електронна пошта:</b><br> 
+<input type="text" id="loginEmail" size="35" placeholder="mail@gmail.com">
+<br><font color="red" size="2"><span id="logemailf"></span></font></p>   
+<p><b>Пароль:</b><br> 
+<input type="password" id="loginPassword" size="35">
+<br><font color="red" size="2"><span id="logpassf"></span></font></p>     
+<p align="center">
+<input type="submit" value="Увійти" style="background-color:#558b2f; color:white; padding:8px 20px; font-weight:bold;">
+</p>
+</form>
+</td>
+</tr>
+</table>
+</font>
+</body>
+</html>
