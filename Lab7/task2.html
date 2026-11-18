@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Лабораторна робота №7 (Завдання 2)</title>
+</head>
+<body>
+<script>
+function factorialRecursion(n) {
+if (n < 0) {
+return; 
+}
+if (n === 0 || n === 1) {
+return 1;
+}
+return n * factorialRecursion(n - 1);
+}
+let f1 = factorialRecursion(5); 
+let f2 = factorialRecursion(5); 
+let f3 = factorialRecursion(0); 
+document.write("<h3>Результати виконання Завдання 2:</h3>");
+document.write("<p>Факторіал числа 5 = " + f1 + "</p>");
+document.write("<p>Факторіал числа 3 = " + f2 + "</p>");
+document.write("<p>Факторіал числа 0 = " + f3 + "</p>");
+console.log("factorialRecursion(5) =", f1);
+console.log("factorialRecursion(3) =", f2);
+console.log("factorialRecursion(0) =", f3);
+</script>
+</body>
+</html>

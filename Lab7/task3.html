@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Лабораторна робота №7 (Завдання 3)</title>
+</head>
+<body>
+<script>
+let numberOfRecusrionCalls = 0;
+let numberOfMemoCalls = 0;
+function fibonachiRecursion(numberInRow) {
+numberOfRecusrionCalls++; 
+if(numberInRow <= 1) {
+return 1;
+}
+return fibonachiRecursion(numberInRow - 1) + fibonachiRecursion(numberInRow - 2);
+}
+
+function createFibonachiMemo() {
+let cache = {}; 
+return function memoiz(numberInRow) {
+numberOfMemoCalls++;
+if (cache[numberInRow] !== undefined) {
+return cache[numberInRow];
+}    
+if (numberInRow <= 1) {
+cache[numberInRow] = 1;
+} else {
+cache[numberInRow] = memoiz(numberInRow - 1) + memoiz(numberInRow - 2);
+}
+return cache[numberInRow];
+}
+}
+const fibonachiMemo = createFibonachiMemo();
+let resRec = fibonachiRecursion(5);
+let resMemo = fibonachiMemo(5);
+document.write("<h3>Результати виконання Завдання 3:</h3>");
+document.write("<p>Рекурсія = " + resRec + ", Кількість викликів = " + numberOfRecusrionCalls + "</p>");
+document.write("<p>Мемоїзація = " + resMemo + ", Кількість викликів = " + numberOfMemoCalls + "</p>");
+console.log("Рекурсія:", resRec, "Виклики:", numberOfRecusrionCalls);
+console.log("Мемоїзація:", resMemo, "Виклики:", numberOfMemoCalls);
+</script>
+</body>
+</html>
