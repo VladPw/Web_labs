@@ -1,0 +1,56 @@
+[
+    {
+        "name": "Лопата штикова",
+        "category": "tillage",
+        "amount": 5,
+        "image": "image/1.png"
+    },
+    {
+        "name": "Граблі металеві",
+        "category": "tillage",
+        "amount": 4,
+        "image": "image/2.jpg"
+    },
+    {
+        "name": "Сапка городня",
+        "category": "tillage",
+        "amount": 6,
+        "image": "image/3.jpg"
+    },
+    {
+        "name": "Секатор садовий",
+        "category": "pruners",
+        "amount": 8,
+        "image": "image/4.jpg"
+    },
+    {
+        "name": "Гілкоріз телескопічний",
+        "category": "pruners",
+        "amount": 3,
+        "image": "image/5.jpg"
+    },
+    {
+        "name": "Пилка садова складна",
+        "category": "pruners",
+        "amount": 5,
+        "image": "image/6.jpg"
+    },
+    {
+        "name": "Садовий шланг 20м",
+        "category": "watering",
+        "amount": 7,
+        "image": "image/7.jpg"
+    },
+    {
+        "name": "Лійка садова 10л",
+        "category": "watering",
+        "amount": 10,
+        "image": "image/8.png"
+    },
+    {
+        "name": "Пістолет-розпилювач",
+        "category": "watering",
+        "amount": 9,
+        "image": "image/9.jpg"
+    }
+]
