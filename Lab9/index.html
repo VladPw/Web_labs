@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Лабораторна робота №9</title>
+    <link type="text/css" href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <img src="image/0.jpg" alt="Магазин садового інвентарю">
+            <div class="header-title">Садовий центр</div>
+        </div>
+        <div class="content">
+            <div class="catalog">
+                <h2>Каталог товарів</h2>
+                <div id="catalog-list">Завантаження товарів...</div>
+            </div>
+            <div class="basket">
+                <h2>Кошик товарів</h2>
+                <div id="list">
+                    <p>Кошик порожній</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="store.js" charset="UTF-8"></script>
+    <script>
+        let store = new Store();
+        fetch('products.json').then(function(response) {
+        return response.json();
+        }).then(function(data) {
+        store.fillStoreWithProducts(data);
+        }).catch(function(err) {
+        alert("Помилка завантаження products.json");
+        });
+    </script>
+</body>
+</html>
