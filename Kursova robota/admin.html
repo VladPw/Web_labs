@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Садовий центр - Панель адміністратора</title>
+    <link type="text/css" href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <img src="image/0.jpg" class="header-bg" alt="Садовий центр">
+            <div class="header-overlay"></div>
+            <div class="header-logo">
+                <a href="index.html" class="logo">Садовий центр</a>
+                <a href="index.html" class="account-log">Вийти</a>
+            </div>
+        </div>
+
+        <div class="menu">
+            <ul id="nav">
+                <li><a href="admin.html">Управління товарами</a></li>
+                <li><a href="catalog.html">Каталог товарів</a></li>
+                <li><a href="index.html">На головну</a></li>
+                <li><a href="about.html">Про нас</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <h2>Панель адміністратора</h2>
+
+            <div class="adm-box">
+                <h3 id="admTitle">Додати новий товар</h3>
+
+                <div class="f-row">
+                    <div class="f-big">
+                        <label>Назва товару:</label>
+                        <input type="text" id="name">
+                    </div>
+                    <div class="f-mid">
+                        <label>Категорія:</label>
+                        <select id="cat">
+                            <option value="tillage">Обробка ґрунту</option>
+                            <option value="pruners">Обрізка саду</option>
+                            <option value="watering">Системи поливу</option>
+                            <option value="tech">Садова техніка</option>
+                            <option value="care">Догляд і захист</option>
+                            <option value="cleaning">Тачки та прибирання</option>
+                        </select>
+                    </div>
+                    <div class="f-mid">
+                        <label>Виробник:</label>
+                        <input type="text" id="brand">
+                    </div>
+                </div>
+
+                <div class="f-row">
+                    <div class="f-sm">
+                        <label>Ціна (грн):</label>
+                        <input type="text" id="price">
+                    </div>
+                    <div class="f-sm">
+                        <label>Стара ціна (0 - без акції):</label>
+                        <input type="text" id="oldPrice" value="0">
+                    </div>
+                    <div class="f-sm">
+                        <label>Кількість (шт.):</label>
+                        <input type="text" id="amount">
+                    </div>
+                    <div class="f-mid">
+                        <label>Шлях до фото:</label>
+                        <input type="text" id="img" placeholder="image/prod/1.jpg">
+                    </div>
+                </div>
+
+                <div class="f-bottom">
+                    <label class="f-check"><input type="checkbox" id="newCheck"> Новинка</label>
+                    <div>
+                        <button class="save-btn" id="saveBtn" onclick="admin.saveProd()">Додати товар</button>
+                        <button class="gray-btn" onclick="admin.clearForm()">Очистити</button>
+                    </div>
+                </div>
+            </div>
+
+            <h3>Список товарів</h3>
+            <table class="adm-table">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Фото</th>
+                        <th>Назва</th>
+                        <th>Категорія</th>
+                        <th>Виробник</th>
+                        <th>Ціна</th>
+                        <th>К-сть</th>
+                        <th>Дії</th>
+                    </tr>
+                </thead>
+                <tbody id="list">
+                    <tr><td colspan="8">Завантаження товарів...</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="footer">
+            <div class="foot-box">
+                <div class="foot-l">Садовий центр</div>
+                <div class="foot-c">&copy; 2026 СумДУ. Розробив студент групи ІТ-41/1 Зякун Владислав Олександрович</div>
+                <div class="foot-r">+38 (050) 123-45-67</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="store.js" charset="UTF-8"></script>
+    <script src="admin.js" charset="UTF-8"></script>
+    <script>
+        let admin = new Admin();
+        fetch('products.json').then(function(response) {
+            return response.json();
+        }).then(function(data) {
+            admin.fillProducts(data);
+        }).catch(function(err) {
+            alert("Помилка завантаження products.json");
+        });
+    </script>
+</body>
+</html>

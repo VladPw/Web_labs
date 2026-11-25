@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Садовий центр - Каталог товарів</title>
+    <link type="text/css" href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <img src="image/0.jpg" class="header-bg" alt="Садовий центр">
+            <div class="header-overlay"></div>
+            <div class="header-logo">
+                <a href="index.html" class="logo">Садовий центр</a>
+                <a href="index.html" class="account-log">Вийти</a>
+            </div>
+        </div>
+
+        <div class="menu">
+            <ul id="nav">
+                <li>
+                    <a href="#" onclick="store.clearFilter(); return false;">Каталог товарів ▾</a>
+                    <ul>
+                        <li><a href="#" onclick="store.selectCat('tillage'); return false;">Обробка ґрунту</a></li>
+                        <li><a href="#" onclick="store.selectCat('pruners'); return false;">Обрізка саду</a></li>
+                        <li><a href="#" onclick="store.selectCat('watering'); return false;">Системи поливу</a></li>
+                        <li><a href="#" onclick="store.selectCat('tech'); return false;">Садова техніка</a></li>
+                        <li><a href="#" onclick="store.selectCat('care'); return false;">Догляд і захист</a></li>
+                        <li><a href="#" onclick="store.selectCat('cleaning'); return false;">Тачки та прибирання</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" onclick="store.showNew(); return false;">Новинки</a></li>
+                <li><a href="#" onclick="store.showSale(); return false;">Акції</a></li>
+                <li><a href="about.html#delivery">Доставка і оплата</a></li>
+                <li><a href="about.html">Про нас</a></li>
+            </ul>
+        </div>
+
+        <div class="content cat-content">
+            <h2 id="catTitle">Каталог товарів</h2>
+
+            <div class="shop-box">
+                <div class="left-bar">
+                    <div class="bar-head">Категорії та фільтри</div>
+                    <div class="bar-body">
+                        <ul class="cat-list">
+                            <li><a href="#" id="all" class="cat-act" onclick="store.selectCat('all'); return false;">Усі товари</a></li>
+                            <li><a href="#" id="tillage" onclick="store.selectCat('tillage'); return false;">Обробка ґрунту</a></li>
+                            <li><a href="#" id="pruners" onclick="store.selectCat('pruners'); return false;">Обрізка саду</a></li>
+                            <li><a href="#" id="watering" onclick="store.selectCat('watering'); return false;">Системи поливу</a></li>
+                            <li><a href="#" id="tech" onclick="store.selectCat('tech'); return false;">Садова техніка</a></li>
+                            <li><a href="#" id="care" onclick="store.selectCat('care'); return false;">Догляд і захист</a></li>
+                            <li><a href="#" id="cleaning" onclick="store.selectCat('cleaning'); return false;">Тачки та прибирання</a></li>
+                        </ul>
+
+                        <div class="f-block">
+                            <p class="f-title">Ціна (грн):</p>
+                            <div class="price-row">
+                                <input type="text" id="priceFrom" placeholder="Від" onkeyup="store.showProducts()">
+                                <input type="text" id="priceTo" placeholder="До" onkeyup="store.showProducts()">
+                            </div>
+                        </div>
+
+                        <div class="f-block">
+                            <p class="f-title">Відбір:</p>
+                            <label class="f-check"><input type="checkbox" id="newCheck" onchange="store.showProducts()"> Тільки новинки</label>
+                            <label class="f-check"><input type="checkbox" id="saleCheck" onchange="store.showProducts()"> Зі знижкою</label>
+                        </div>
+
+                        <div class="f-block">
+                            <p class="f-title">Сортування:</p>
+                            <label class="f-check"><input type="radio" id="sortDef" name="sort" value="default" checked onchange="store.showProducts()"> За замовчуванням</label>
+                            <label class="f-check"><input type="radio" name="sort" value="asc" onchange="store.showProducts()"> Спочатку дешевші</label>
+                            <label class="f-check"><input type="radio" name="sort" value="desc" onchange="store.showProducts()"> Спочатку дорожчі</label>
+                        </div>
+
+                        <button class="clear-btn" onclick="store.clearFilter()">Скинути все</button>
+                    </div>
+                </div>
+
+                <div class="center-cat">
+                    <div class="search-box">
+                        <input type="text" id="search" placeholder="Пошук за назвою або виробником..." onkeyup="store.showProducts()">
+                    </div>
+
+                    <div id="catalog">Завантаження товарів...</div>
+                </div>
+
+                <div class="right-bar">
+                    <div class="bar-head">Кошик товарів</div>
+                    <div class="bar-body">
+                        <div id="list">
+                            <p class="empty-b">Кошик порожній</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="foot-box">
+                <div class="foot-l">Садовий центр</div>
+                <div class="foot-c">&copy; 2026 СумДУ. Розробив студент групи ІТ-41/1 Зякун Владислав Олександрович</div>
+                <div class="foot-r">+38 (050) 123-45-67</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="store.js" charset="UTF-8"></script>
+    <script>
+        let store = new Store();
+        fetch('products.json').then(function(response) {
+        return response.json();
+        }).then(function(data) {
+        store.fillStoreWithProducts(data);
+        }).catch(function(err) {
+        alert("Помилка завантаження products.json");
+        });
+    </script>
+</body>
+</html>

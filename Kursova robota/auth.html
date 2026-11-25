@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Садовий центр — Вхід та реєстрація</title>
+    <link type="text/css" href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <img src="image/0.jpg" class="header-bg" alt="Садовий центр">
+            <div class="header-overlay"></div>
+            <div class="header-logo">
+                <a href="index.html" class="logo">Садовий центр</a>
+                <a href="auth.html" class="account-log">Увійти / Реєстрація</a>
+            </div>
+        </div>
+
+        <div class="menu">
+            <ul id="nav">
+                <li>
+                    <a href="auth.html">Каталог товарів ▾</a>
+                    <ul>
+                        <li><a href="auth.html">Обробка ґрунту</a></li>
+                        <li><a href="auth.html">Обрізка саду</a></li>
+                        <li><a href="auth.html">Системи поливу</a></li>
+                        <li><a href="auth.html">Садова техніка</a></li>
+                        <li><a href="auth.html">Догляд і захист</a></li>
+                        <li><a href="auth.html">Тачки та прибирання</a></li>
+                    </ul>
+                </li>
+                <li><a href="auth.html">Новинки</a></li>
+                <li><a href="auth.html">Акції</a></li>
+                <li><a href="about.html#delivery">Доставка і оплата</a></li>
+                <li><a href="about.html">Про нас</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+            <div class="login-box">
+                <div class="tabs">
+                    <button id="btnL" class="tab tab-act" onclick="showTab(1)">Вхід</button>
+                    <button id="btnR" class="tab" onclick="showTab(2)">Реєстрація</button>
+                </div>
+
+                <div id="blockL" class="form-block">
+                    <h3>Вхід</h3>
+                    <p class="form-text">Увійдіть в особистий кабінет «Садового центру»</p>
+
+                    <form name="loginForm" action="#" method="post" onsubmit="return validateL()">
+                        <div class="form-row">
+                            <label>Електронна пошта:</label>
+                            <input type="text" id="loginEmail" name="email" placeholder="mail@gmail.com">
+                            <span id="logemailf" class="err"></span>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Пароль:</label>
+                            <input type="password" id="loginPassword" name="pass" placeholder="Введіть пароль">
+                            <span id="logpassf" class="err"></span>
+                        </div>
+
+                        <input type="submit" value="Увійти" class="form-btn">
+                    </form>
+
+                
+                </div>
+                <div id="blockR" class="form-block" style="display: none;">
+                    <h3>Реєстрація нового клієнта</h3>
+                    <p class="form-text">Створіть акаунт для доступу до каталогу та замовлень</p>
+
+                    <form name="regForm" action="#" method="post" onsubmit="return validateR()">
+                        <div class="form-row">
+                            <label>ПІБ:</label>
+                            <input type="text" id="regName" name="name" placeholder="Іванов Іван">
+                            <span id="namef" class="err"></span>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Електронна пошта:</label>
+                            <input type="text" id="regEmail" name="email" placeholder="mail@gmail.com">
+                            <span id="emailf" class="err"></span>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Телефон:</label>
+                            <input type="text" id="regPhone" name="phone" placeholder="+380501234567">
+                            <span id="phonef" class="err"></span>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Пароль:</label>
+                            <input type="password" id="regPassword" name="pass" placeholder="Мінімум 6 символів">
+                            <span id="passf" class="err"></span>
+                        </div>
+
+                        <div class="form-row">
+                            <label>Повторіть пароль:</label>
+                            <input type="password" id="regPassword2" name="pass2" placeholder="Повторіть пароль">
+                            <span id="pass2f" class="err"></span>
+                        </div>
+
+                        <input type="submit" value="Створити акаунт" class="form-btn">
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="foot-box">
+                <div class="foot-l">Садовий центр</div>
+                <div class="foot-c">&copy; 2026 СумДУ. Розробив студент групи ІТ-41/1 Зякун Владислав Олександрович</div>
+                <div class="foot-r">+38 (050) 123-45-67</div>
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js" charset="UTF-8"></script>
+</body>
+</html>
