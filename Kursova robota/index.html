@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Садовий центр — Головна</title>
+    <link type="text/css" href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+    <img src="image/0.jpg" class="header-bg" alt="Садовий центр">
+    <div class="header-overlay"></div>
+    <div class="header-logo">
+        <a href="index.html" class="logo">Садовий центр</a>
+        <a href="auth.html" class="account-log">Увійти / Реєстрація</a>
+    </div>
+</div>
+
+        <div class="menu">
+            <ul id="nav">
+                <li>
+                    <a href="auth.html">Каталог товарів ▾</a>
+                    <ul>
+        <li><a href="auth.html">Обробка ґрунту</a></li>
+        <li><a href="auth.html">Обрізка саду</a></li>
+        <li><a href="auth.html">Системи поливу</a></li>
+        <li><a href="auth.html">Садова техніка</a></li>
+        <li><a href="auth.html">Догляд і захист</a></li>
+        <li><a href="auth.html">Тачки та прибирання</a></li>
+    </ul>
+                </li>
+                <li><a href="auth.html">Новинки</a></li>
+                <li><a href="auth.html">Акції</a></li>
+                <li><a href="about.html#delivery">Доставка і оплата</a></li>
+                <li><a href="about.html">Про нас</a></li>
+            </ul>
+        </div>
+
+        <div class="content">
+           <div class="slider">
+    <div class="item">
+        <img src="image/slide1.jpg" alt="Садовий інвентар">
+        <div class="slide-overlay"></div>
+        <div class="slideText">
+            <span class="slide-icon">Сезон 2026</span>
+            <h1>Все для вашого ідеального саду</h1>
+            <p>Надійний садовий інвентар від перевірених виробників за доступними цінами</p>
+            <a href="auth.html" class="slide-link">Перейти до каталогу</a>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="image/slide2.jpg" alt="Акції та знижки">
+        <div class="slide-overlay"></div>
+        <div class="slideText">
+            <span class="slide-icon">Знижки до -25%</span>
+            <h1>Сезонний розпродаж садового інвентарю</h1>
+            <p>Спеціальні ціни на популярні інструменти для ґрунту та обрізки для наших клієнтів</p>
+            <a href="auth.html" class="slide-link">Переглянути акції</a>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="image/slide3.jpg" alt="Новинки каталогу">
+        <div class="slide-overlay"></div>
+        <div class="slideText">
+            <span class="slide-icon">Нові надходження</span>
+            <h1>Новинки для легкого догляду за садом</h1>
+            <p>Оновлені моделі секаторів, міцних лопат та армованих шлангів уже в каталозі</p>
+            <a href="auth.html" class="slide-link">Дивитись новинки</a>
+        </div>
+    </div>
+
+    <div class="item">
+        <img src="image/slide4.jpg" alt="Доставка по Україні">
+        <div class="slide-overlay"></div>
+        <div class="slideText">
+            <span class="slide-icon">Зручний сервіс</span>
+            <h1>Швидка доставка по всій Україні</h1>
+            <p>Відправляємо замовлення Новою Поштою, Укрпоштою або кур’єром у найкоротші терміни</p>
+            <a href="about.html#delivery" class="slide-link">Умови доставки</a>
+        </div>
+    </div>
+
+    <a class="prev" onclick="minusSlide()">&#10094;</a>
+    <a class="next" onclick="plusSlide()">&#10095;</a>
+
+    <div class="slider-dots">
+        <span class="slider-dots_item" onclick="currentSlide(1)"></span>
+        <span class="slider-dots_item" onclick="currentSlide(2)"></span>
+        <span class="slider-dots_item" onclick="currentSlide(3)"></span>
+        <span class="slider-dots_item" onclick="currentSlide(4)"></span>
+    </div>
+</div>
+
+           <div class="advantages">
+    <div class="plus-box">
+        <div class="plus-icon">
+            <img src="image/icon1.png" alt="Швидка доставка">
+        </div>
+        <h4>Швидка доставка</h4>
+        <p>Оперативна відправка замовлень по всій Україні</p>
+    </div>
+    <div class="plus-box">
+        <div class="plus-icon">
+            <img src="image/icon2.png" alt="Якість гарантована">
+        </div>
+        <h4>Якість гарантована</h4>
+        <p>Міцні інструменти, розраховані на роки роботи</p>
+    </div>
+    <div class="plus-box">
+        <div class="plus-icon">
+            <img src="image/icon3.png" alt="Перевірені бренди">
+        </div>
+        <h4>Перевірені бренди</h4>
+        <p>Оригінальна продукція провідних виробників</p>
+    </div>
+    <div class="plus-box">
+        <div class="plus-icon">
+            <img src="image/icon4.png" alt="Широкий вибір">
+        </div>
+        <h4>Широкий вибір</h4>
+        <p>Усе необхідне для саду й городу в одному каталозі</p>
+    </div>
+</div>
+
+            <div class="assortment">
+               <h2>Асортимент магазину</h2>
+
+<div class="promo">
+    <div class="promo-text">
+        <span class="promo-tag">Ґрунт • Обрізка • Полив</span>
+        <h3>Ручний інвентар для щоденних робіт</h3>
+        <p>Лопати, граблі, секатори, гілкорізи та системи поливу — усе базове спорядження для догляду за грядками й садом. Підбираємо моделі з міцної сталі та зручними ручками, які витримують активне навантаження не один сезон.</p>
+        <a href="auth.html" class="promo-link">Обрати інвентар &rarr;</a>
+    </div>
+    <div class="promo-img">
+        <img src="image/promo1.jpg" alt="Ручний садовий інвентар">
+    </div>
+</div>
+
+<div class="promo">
+    <div class="promo-img">
+        <img src="image/promo2.jpg" alt="Садова техніка">
+    </div>
+    <div class="promo-text">
+        <span class="promo-tag">Потужність та економія часу</span>
+        <h3>Надійна садова техніка</h3>
+        <p>Газонокосарки, тримери та культиватори для швидкої обробки ділянки без зайвих зусиль. Пропонуємо техніку лише від перевірених виробників із гарантією якості та зрозумілим сервісним обслуговуванням.</p>
+        <a href="auth.html" class="promo-link">Дивитись техніку &rarr;</a>
+    </div>
+</div>
+
+<div class="promo">
+    <div class="promo-text">
+        <span class="promo-tag">Усе для сезону в одному місці</span>
+        <h3>Захист рослин, тачки та прибирання</h3>
+        <p>Обприскувачі, сівалки, місткі садові тачки, рукавиці та інвентар для чистоти на подвір’ї. Вам не доведеться шукати потрібні дрібниці в різних магазинах — у каталозі легко зібрати повний комплект від весняної посадки до осіннього прибирання.</p>
+        <a href="auth.html" class="promo-link">Перейти до каталогу &rarr;</a>
+    </div>
+    <div class="promo-img">
+        <img src="image/promo3.jfif" alt="Догляд за садом та прибирання">
+    </div>
+</div>
+</div>
+            <div class="info-block">
+                <h3>Про «Садовий центр»</h3>
+                <p>Наш інтернет-каталог створений для власників садів, дач і присадибних ділянок, які цінують якісний інструмент. Зареєструйтеся або увійдіть в акаунт, щоб отримати доступ до повного каталогу товарів, цін, фільтрів за виробниками та кошика замовлень.</p>
+                <div class="info-btns">
+                    <a href="auth.html" class="btn-white">Увійти / Зареєструватися</a>
+                    <a href="about.html" class="btn-green">Детальніше про нас</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="foot-box">
+                <div class="foot-l">Садовий центр</div>
+                <div class="foot-c">&copy; 2026 СумДУ. Розробив студент групи ІТ-41/1 Зякун Владислав Олександрович</div>
+                <div class="foot-r">+38 (050) 123-45-67</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        var slideIndex = 1;
+        showSlides(slideIndex);
+
+        function plusSlide() {
+            showSlides(slideIndex += 1);
+        }
+        function minusSlide() {
+            showSlides(slideIndex -= 1);
+        }
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("item");
+            let dots = document.getElementsByClassName("slider-dots_item");
+            if (n > slides.length) {
+                slideIndex = 1;
+            }
+            if (n < 1) {
+                slideIndex = slides.length;
+            }
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            slides[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " active";
+        }
+    </script>
+</body>
+</html>
