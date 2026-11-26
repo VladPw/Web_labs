@@ -15,7 +15,6 @@
                 <a href="index.html" class="account-log">Вийти</a>
             </div>
         </div>
-
         <div class="menu">
             <ul id="nav">
                 <li><a href="admin.html">Управління товарами</a></li>
@@ -24,13 +23,10 @@
                 <li><a href="about.html">Про нас</a></li>
             </ul>
         </div>
-
         <div class="content">
             <h2>Панель адміністратора</h2>
-
             <div class="adm-box">
                 <h3 id="admTitle">Додати новий товар</h3>
-
                 <div class="f-row">
                     <div class="f-big">
                         <label>Назва товару:</label>
@@ -52,7 +48,6 @@
                         <input type="text" id="brand">
                     </div>
                 </div>
-
                 <div class="f-row">
                     <div class="f-sm">
                         <label>Ціна (грн):</label>
@@ -68,10 +63,15 @@
                     </div>
                     <div class="f-mid">
                         <label>Шлях до фото:</label>
-                        <input type="text" id="img" placeholder="image/prod/1.jpg">
+                        <input type="text" id="img" placeholder="image/1.jpg">
                     </div>
                 </div>
-
+                <div class="f-row">
+                    <div class="f-full">
+                        <label>Опис товару:</label>
+                        <input type="text" id="desc">
+                    </div>
+                </div>
                 <div class="f-bottom">
                     <label class="f-check"><input type="checkbox" id="newCheck"> Новинка</label>
                     <div>
@@ -80,7 +80,6 @@
                     </div>
                 </div>
             </div>
-
             <h3>Список товарів</h3>
             <table class="adm-table">
                 <thead>
@@ -100,25 +99,23 @@
                 </tbody>
             </table>
         </div>
-
         <div class="footer">
             <div class="foot-box">
                 <div class="foot-l">Садовий центр</div>
-                <div class="foot-c">&copy; 2026 СумДУ. Розробив студент групи ІТ-41/1 Зякун Владислав Олександрович</div>
+                <div class="foot-c">Виконав студент групи ІТ-41/1 Зякун Владислав Олександрович</div>
                 <div class="foot-r">+38 (050) 123-45-67</div>
             </div>
         </div>
     </div>
-
     <script src="store.js" charset="UTF-8"></script>
     <script src="admin.js" charset="UTF-8"></script>
     <script>
         let admin = new Admin();
-        fetch('products.json').then(function(response) {
+        fetch('products.json').then(function (response) {
             return response.json();
-        }).then(function(data) {
+        }).then(function (data) {
             admin.fillProducts(data);
-        }).catch(function(err) {
+        }).catch(function (err) {
             alert("Помилка завантаження products.json");
         });
     </script>
