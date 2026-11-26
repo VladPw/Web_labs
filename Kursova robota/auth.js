@@ -1,3 +1,5 @@
+let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)+$/;
+let phoneRegex = /^\+?[0-9]{10,12}$/;
 function showTab(n) {
     if (n == 1) {
         document.getElementById('blockL').style.display = 'block';
@@ -11,30 +13,23 @@ function showTab(n) {
         document.getElementById('btnR').className = 'tab tab-act';
     }
 }
-
 function validateL() {
     document.getElementById('logemailf').innerHTML = '';
     document.getElementById('logpassf').innerHTML = '';
-
     let email = document.getElementById("loginEmail").value;
     let password = document.getElementById("loginPassword").value;
     let isV = true;
-    let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
     if (email == "") {
-        document.getElementById('logemailf').innerHTML = "* Поле Email не може бути пустим";
+        document.getElementById('logemailf').innerHTML = "* Поле Email не може бути порожнім";
         isV = false;
     } else if (!email.match(emailRegex)) {
-        document.getElementById('logemailf').innerHTML = "* Введіть коректний Email адрес";
+        document.getElementById('logemailf').innerHTML = "* Введіть коректний Email";
         isV = false;
     }
-
     if (password == "") {
-        document.getElementById('logpassf').innerHTML = "* Поле Пароль не може бути пустим";
+        document.getElementById('logpassf').innerHTML = "* Поле Пароль не може бути порожнім";
         isV = false;
-   
     }
-
     if (isV) {
         if (email == "admin@mail.ua" && password == "admin123") {
             alert("Вхід виконано як адміністратор.");
@@ -46,7 +41,6 @@ function validateL() {
     }
     return false;
 }
-
 function validateR() {
     document.getElementById('namef').innerHTML = '';
     document.getElementById('emailf').innerHTML = '';
@@ -60,34 +54,31 @@ function validateR() {
     let password = document.getElementById("regPassword").value;
     let password2 = document.getElementById("regPassword2").value;
     let isV = true;
-    let emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
-
     if (fullname == "") {
         document.getElementById('namef').innerHTML = "* Поле ПІБ обов'язкове";
         isV = false;
     }
-
     if (email == "") {
-        document.getElementById('emailf').innerHTML = "* Поле Email не може бути пустим";
+        document.getElementById('emailf').innerHTML = "* Поле Email не може бути порожнім";
         isV = false;
     } else if (!email.match(emailRegex)) {
-        document.getElementById('emailf').innerHTML = "* Введіть коректний Email адрес";
+        document.getElementById('emailf').innerHTML = "* Введіть коректний Email";
         isV = false;
     }
-
     if (phone == "") {
-        document.getElementById('phonef').innerHTML = "* Поле Телефон не може бути пустим";
+        document.getElementById('phonef').innerHTML = "* Поле Телефон не може бути порожнім";
+        isV = false;
+    } else if (!phone.match(phoneRegex)) {
+        document.getElementById('phonef').innerHTML = "* Введіть коректний номер";
         isV = false;
     }
-
     if (password == "") {
-        document.getElementById('passf').innerHTML = "* Поле Пароль не може бути пустим";
+        document.getElementById('passf').innerHTML = "* Поле Пароль не може бути порожнім";
         isV = false;
     } else if (password.length < 6) {
         document.getElementById('passf').innerHTML = "* Мінімум 6 символів";
         isV = false;
     }
-
     if (password2 == "") {
         document.getElementById('pass2f').innerHTML = "* Підтвердіть пароль";
         isV = false;
@@ -95,7 +86,6 @@ function validateR() {
         document.getElementById('pass2f').innerHTML = "* Паролі не співпадають";
         isV = false;
     }
-
     if (isV) {
         alert("Дані введено коректно. Акаунт успішно створено.");
         window.location.href = "catalog.html";
