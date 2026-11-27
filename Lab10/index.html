@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лабораторна робота №10 - Каталог товарів</title>
+    <link type="text/css" href="style.css" rel="stylesheet">
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="header-logo">
+                <a href="#" class="logo" onclick="fetchProducts(); return false;">Каталог товарів</a>
+            </div>
+        </div>
+        <div class="content">
+            <h2 id="catTitle">Усі товари</h2>
+            <div class="shop-box">
+                <div class="left-col">
+                    <div class="left-bar">
+                        <div class="bar-head">Категорії</div>
+                        <div class="bar-body">
+                            <ul id="catList" class="cat-list">
+                                <li>Завантаження...</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <button class="all-btn" onclick="fetchProducts()">See all products</button>
+                </div>
+                <div class="right-cat">
+                    <div id="catalog">Завантаження товарів...</div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="foot-box">
+            </div>
+        </div>
+    </div>
+    <script src="index.js" charset="UTF-8" defer></script>
+</body>
+</html>
