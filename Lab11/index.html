@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Садовий центр - Головна</title>
+    <link type="text/css" href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="header-logo">
+                <a href="index.html" class="logo">Садовий центр</a>
+            </div>
+        </div>
+        <div class="menu">
+            <ul id="nav">
+                <li><a href="index.html">Головна</a></li>
+                <li id="catMenu">
+                    <a href="catalog.html">Каталог товарів ▾</a>
+                    <ul id="subNav">
+                        <li><a href="catalog.html#tillage">Обробка ґрунту</a></li>
+                        <li><a href="catalog.html#pruners">Обрізка саду</a></li>
+                    </ul>
+                </li>
+                <li><a href="catalog.html#new">Новинки</a></li>
+                <li><a href="catalog.html#sale">Акції</a></li>
+            </ul>
+        </div>
+        <div class="content">
+            <div class="slider">
+                <div class="item" id="slide1">
+                    <img src="image/slide1.jpeg" alt="Слайд 1">
+                    <div class="slide-overlay"></div>
+                    <div class="slideText">Якісний садовий інвентар</div>
+                </div>
+                <div class="item" id="slide2">
+                    <img src="image/slide2.jpeg" alt="Слайд 2">
+                    <div class="slide-overlay"></div>
+                    <div class="slideText">Надійні секатори та гілкорізи</div>
+                </div>
+                <div class="item" id="slide3">
+                    <img src="image/slide3.jpeg" alt="Слайд 3">
+                    <div class="slide-overlay"></div>
+                    <div class="slideText">Зручні інструменти для обробки ґрунту</div>
+                </div>
+                <div class="item" id="slide4">
+                    <img src="image/slide4.jpeg" alt="Слайд 4">
+                    <div class="slide-overlay"></div>
+                    <div class="slideText">Сучасні системи поливу та шланги</div>
+                </div>
+                <a class="prev">&#10094;</a>
+                <a class="next">&#10095;</a>
+                <div class="slider-dots">
+                    <span class="slider-dots_item" id="dot1" data-slide="1"></span>
+                    <span class="slider-dots_item" id="dot2" data-slide="2"></span>
+                    <span class="slider-dots_item" id="dot3" data-slide="3"></span>
+                    <span class="slider-dots_item" id="dot4" data-slide="4"></span>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="foot-box">
+                Виконав студент групи ІТ-41/1 Зякун Владислав Олександрович
+            </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function () {
+            $("#catMenu").mouseenter(function () {
+                $("#subNav").slideDown(200);
+            });
+
+            $("#catMenu").mouseleave(function () {
+                $("#subNav").slideUp(150);
+            });
+            let slideIndex = 1;
+            function showSlides(n) {
+                let total = $(".slider .item").length;
+                if (n > total) {
+                    slideIndex = 1;
+                }
+                if (n < 1) {
+                    slideIndex = total;
+                }
+                $(".slider .item").hide();
+                $(".slider-dots_item").removeClass("active");
+                $("#slide" + slideIndex).fadeIn(400);
+                $("#dot" + slideIndex).addClass("active");
+            }
+            showSlides(slideIndex);
+            $(".next").click(function () {
+                slideIndex = slideIndex + 1;
+                showSlides(slideIndex);
+            });
+            $(".prev").click(function () {
+                slideIndex = slideIndex - 1;
+                showSlides(slideIndex);
+            });
+            $(".slider-dots_item").click(function () {
+                slideIndex = Number($(this).attr("data-slide"));
+                showSlides(slideIndex);
+            });
+        });
+    </script>
+</body>
+</html>
