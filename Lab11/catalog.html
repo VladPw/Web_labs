@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Садовий центр - Каталог товарів</title>
+    <link type="text/css" href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+</head>
+<body>
+    <div class="main">
+        <div class="header">
+            <div class="header-logo">
+                <a href="index.html" class="logo">Садовий центр</a>
+            </div>
+        </div>
+        <div class="menu">
+            <ul id="nav">
+                <li><a href="index.html">Головна</a></li>
+                <li id="catMenu">
+                    <a href="#" id="navAll">Каталог товарів ▾</a>
+                    <ul id="subNav">
+                        <li><a href="#" data-cat="tillage">Обробка ґрунту</a></li>
+                        <li><a href="#" data-cat="pruners">Обрізка саду</a></li>
+                    </ul>
+                </li>
+                <li><a href="#" id="navNew">Новинки</a></li>
+                <li><a href="#" id="navSale">Акції</a></li>
+            </ul>
+        </div>
+        <div class="content cat-content">
+            <h2 id="catTitle">Каталог товарів</h2>
+            <div class="shop-box">
+                <div class="left-bar">
+                    <div class="bar-head" id="filterHead">Категорії та фільтри</div>
+                    <div class="bar-body" id="filterBody">
+                        <ul class="cat-list">
+                            <li><a href="#" id="all" class="cat-act">Усі товари</a></li>
+                            <li><a href="#" id="tillage">Обробка ґрунту</a></li>
+                            <li><a href="#" id="pruners">Обрізка саду</a></li>
+                        </ul>
+                        <div class="f-block">
+                            <p class="f-title">Ціна (грн):</p>
+                            <div class="price-row">
+                                <input type="text" id="priceFrom" placeholder="Від">
+                                <input type="text" id="priceTo" placeholder="До">
+                            </div>
+                        </div>
+                        <div class="f-block">
+                            <p class="f-title">Сортування:</p>
+                            <select id="sortSelect" class="f-select">
+                                <option value="default">За замовчуванням</option>
+                                <option value="asc">Спочатку дешевші</option>
+                                <option value="desc">Спочатку дорожчі</option>
+                            </select>
+                        </div>
+                        <button id="clearBtn" class="clear-btn">Скинути все</button>
+                    </div>
+                </div>
+                <div class="center-cat">
+                    <div class="search-box">
+                        <input type="text" id="search" placeholder="Пошук за назвою або виробником...">
+                    </div>
+                    <div id="catalog">Завантаження товарів...</div>
+                </div>
+                <div class="right-bar">
+                    <div class="bar-head">Кошик товарів</div>
+                    <div class="bar-body">
+                        <div id="list">
+                            <p class="empty-b">Кошик порожній</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="foot-box">
+                Виконав студент групи ІТ-41/1 Зякун Владислав Олександрович
+            </div>
+        </div>
+    </div>
+    <script src="store.js" charset="UTF-8"></script>
+</body>
+</html>

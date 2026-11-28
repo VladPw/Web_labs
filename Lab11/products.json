@@ -1,0 +1,74 @@
+[
+  {
+    "id": 1,
+    "name": "Лопата штикова Fiskars Solid",
+    "category": "tillage",
+    "brand": "Fiskars",
+    "price": 1070,
+    "oldPrice": 0,
+    "amount": 12,
+    "image": "image/1.jpg",
+    "desc": "Ефективна та зручна базова лопата високої якості для щоденних робіт із ґрунтом.",
+    "isNew": true
+  },
+  {
+    "id": 2,
+    "name": "Ручна сапка для видалення бур'янів WeedKnife",
+    "category": "tillage",
+    "brand": "WeedKnife",
+    "price": 429,
+    "oldPrice": 490,
+    "amount": 18,
+    "image": "image/2.jpg",
+    "desc": "Компактна ручна сапка для прополювання городу й клумб - швидко видаляє бур'яни та розпушує ґрунт.",
+    "isNew": false
+  },
+  {
+    "id": 3,
+    "name": "Граблі Gardena Combisystem 30 см із держаком",
+    "category": "tillage",
+    "brand": "Gardena",
+    "price": 1490,
+    "oldPrice": 0,
+    "amount": 10,
+    "image": "image/3.jpg",
+    "desc": "Практичні граблі шириною 30 см (12 зубців) із дерев'яним держаком для розпушування та вирівнювання грядок.",
+    "isNew": false
+  },
+  {
+    "id": 4,
+    "name": "Секатор Gruntek Silber-Schnitt",
+    "category": "pruners",
+    "brand": "Gruntek",
+    "price": 897,
+    "oldPrice": 1050,
+    "amount": 15,
+    "image": "image/4.jpg",
+    "desc": "Секатор для акуратного обрізання зелених гілок, кущів, лози та квітів із діаметром різу до 25 мм.",
+    "isNew": false
+  },
+  {
+    "id": 5,
+    "name": "Гілкоріз штанговий Gartner телескопічний",
+    "category": "pruners",
+    "brand": "Gartner",
+    "price": 1288,
+    "oldPrice": 0,
+    "amount": 7,
+    "image": "image/5.jpg",
+    "desc": "Зручний телескопічний гілкоріз для легкої обрізки високих гілок на кущах і плодових деревах.",
+    "isNew": true
+  },
+  {
+    "id": 6,
+    "name": "Пила садова дугова Gruntek Orca 450 мм",
+    "category": "pruners",
+    "brand": "Gruntek",
+    "price": 284,
+    "oldPrice": 0,
+    "amount": 14,
+    "image": "image/6.jpg",
+    "desc": "Обрізна дугова пилка довжиною 450 мм для швидкого спилювання гілок та невеликих дерев.",
+    "isNew": false
+  }
+]
